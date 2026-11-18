@@ -222,7 +222,7 @@ async function deployWorker(
 	const { projectRoot } = entry;
 
 	let latestDeployment: ApiDeployment | undefined;
-	if (!props.dispatchNamespace && accountId && scriptName) {
+	if (!props.dryRun && !props.dispatchNamespace && accountId && scriptName) {
 		const confirmation = await confirmLatestDeploymentOverwriteAndGetLatest(
 			config,
 			accountId,
